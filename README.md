@@ -1,16 +1,10 @@
-# glow_intel
+# Glow Intel 🌟
 
-A new Flutter project.
+Glow Intel is a cross-platform skincare advisory app built with Flutter, designed to provide personalized skincare recommendations using machine learning models.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Features:
+Real-Time Analysis: Upload skin images for tailored advice.
+Personalized Recommendations: Leverages ML to suggest skincare routines.
+Intuitive Design: Optimized for seamless navigation and multi-device compatibility.
+Secure Backend: Supports authentication and real-time data synchronization.
+Stay tuned as this project evolves to make skincare smarter and more accessible! 😊
