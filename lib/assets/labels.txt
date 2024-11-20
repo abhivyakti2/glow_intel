@@ -1,0 +1,3 @@
+0 Oily Skin
+1 Dry Skin
+2 Sensitive Skin
