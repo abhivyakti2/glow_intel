@@ -29,8 +29,8 @@ android {
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
 
     defaultConfig {
@@ -54,19 +54,3 @@ flutter {
     source = "../.."
 }
 
-// Dependencies block
-dependencies {
-    // Add TensorFlow Lite dependency
-    implementation 'org.tensorflow:tensorflow-lite:2.8.0' // Use the latest version if possible
-
-    // If you need additional TensorFlow Lite packages, you can include them as follows:
-    // implementation 'org.tensorflow:tensorflow-lite-gpu:2.16.1' // For GPU support
-    // implementation 'org.tensorflow:tensorflow-lite-support:0.4.0' // For additional support features
-    implementation("com.google.android.material:material:<1.13.0-alpha07>")
-    	
-    // Add other dependencies as needed
-}
-repositories {
-    google()
-    mavenCentral()
-}
