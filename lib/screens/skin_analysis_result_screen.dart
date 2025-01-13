@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'home_screen.dart';
 
 class SkinAnalysisResultScreen extends StatelessWidget {
   final String skinType;
@@ -15,8 +16,15 @@ class SkinAnalysisResultScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Skin Health Result"),
-        backgroundColor: Colors.deepPurple,
+        title: Text(
+          "Skin Health Result",
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ), // Change this to your desired color),
+
+        backgroundColor: const Color.fromARGB(255, 142, 184, 255),
+
         elevation: 5,
       ),
       body: AnimatedOpacity(
@@ -33,73 +41,128 @@ class SkinAnalysisResultScreen extends StatelessWidget {
                   duration: Duration(seconds: 1),
                   curve: Curves.easeInOut,
                   padding: EdgeInsets.symmetric(vertical: 10),
-                  child: Text(
-                    "Skin Type: $skinType",
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.deepPurple,
-                    ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Skin Type:",
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontStyle: FontStyle.italic,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.deepPurple,
+                        ),
+                      ),
+                      SizedBox(
+                          height:
+                              5), // Add spacing between the label and the answer
+                      Text(
+                        "$skinType",
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.deepPurple,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                
-                // Add a divider for styling
+
+// Add a divider for styling
                 Divider(
                   color: Colors.grey,
                   thickness: 1,
                 ),
-                
-                // Animated Text for Recommendations
+
+// Animated Text for Recommendations
                 AnimatedContainer(
                   duration: Duration(seconds: 1),
                   curve: Curves.easeInOut,
                   padding: EdgeInsets.symmetric(vertical: 10),
-                  child: Text(
-                    "Recommendation: $recommendation",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.black87,
-                    ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Recommendation:",
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontStyle: FontStyle.italic,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black87,
+                        ),
+                      ),
+                      SizedBox(
+                          height:
+                              5), // Add spacing between the label and the answer
+                      Text(
+                        "$recommendation",
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.black87,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                
-                // Add a divider for styling
+
+// Add a divider for styling
                 Divider(
                   color: Colors.grey,
                   thickness: 1,
                 ),
-                
-                // Animated Text for Brand Recommendations
+
+// Animated Text for Brand Recommendations
                 AnimatedContainer(
                   duration: Duration(seconds: 1),
                   curve: Curves.easeInOut,
                   padding: EdgeInsets.symmetric(vertical: 10),
-                  child: Text(
-                    "Brands to Use: $brandRecommendation",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontStyle: FontStyle.italic,
-                      color: Colors.pinkAccent,
-                    ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Brands to Use:",
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontStyle: FontStyle.italic,
+                          color: Colors.pinkAccent,
+                        ),
+                      ),
+                      SizedBox(
+                          height:
+                              5), // Add spacing between the label and the answer
+                      Text(
+                        "$brandRecommendation",
+                        style: TextStysle(
+                          fontSize: 20,
+                          color: Colors.pinkAccent,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                
-                SizedBox(height: 20),
-                
+
+                SizedBox(height: 30),
+
                 // Call-to-Action Button
                 Center(
                   child: ElevatedButton(
                     onPressed: () {
-                      // You can add any action here like navigating to another screen
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => HomeScreen()));
                     },
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.deepPurple),
-                      padding: MaterialStateProperty.all(EdgeInsets.symmetric(horizontal: 40, vertical: 15)),
+                      backgroundColor: MaterialStateProperty.all(
+                          const Color.fromARGB(255, 122, 170, 254)),
+                      padding: MaterialStateProperty.all(
+                          EdgeInsets.symmetric(horizontal: 35, vertical: 10)),
                     ),
                     child: Text(
                       "Back to Home",
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold,
+                          color: const Color.fromARGB(255, 255, 255, 255)),
                     ),
                   ),
                 ),

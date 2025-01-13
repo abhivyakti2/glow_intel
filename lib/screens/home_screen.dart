@@ -25,16 +25,32 @@ class HomeScreen extends StatelessWidget {
                   AnimatedContainer(
                     duration: Duration(seconds: 1),
                     curve: Curves.easeInOut,
-                    child: Text(
-                      "Welcome to Skin Health Analyzer",
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                    child: Text.rich(
+                      TextSpan(
+                        children: [
+                          TextSpan(
+                            text: "Welcome to\n",
+                            style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.normal,
+                              color: Colors.white,
+                            ),
+                          ),
+                          TextSpan(
+                            text: "Skin Health Analyzer",
+                            style: TextStyle(
+                              fontSize: 28,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
                       ),
+                      textAlign: TextAlign.center,
                     ),
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(
+                      height: 45), // Adds space between the text and the button
                   AnimatedButton(),
                 ],
               ),
@@ -62,11 +78,15 @@ class _AnimatedButtonState extends State<AnimatedButton> {
       height: 50,
       width: 250,
       decoration: BoxDecoration(
-        color: _isHovered ? Colors.pinkAccent : Colors.blue,
+        color: _isHovered
+            ? Colors.pinkAccent
+            : const Color.fromARGB(255, 255, 255, 255),
         borderRadius: BorderRadius.circular(25),
         boxShadow: [
           BoxShadow(
-            color: _isHovered ? Colors.pinkAccent.withOpacity(0.5) : Colors.blue.withOpacity(0.5),
+            color: _isHovered
+                ? Colors.pinkAccent.withOpacity(0.5)
+                : const Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),
             blurRadius: 10,
             spreadRadius: 2,
           ),
@@ -74,8 +94,8 @@ class _AnimatedButtonState extends State<AnimatedButton> {
       ),
       child: ElevatedButton(
         onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => SkinAnalysisScreen()));
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => SkinAnalysisScreen()));
         },
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all(Colors.transparent),
@@ -88,7 +108,10 @@ class _AnimatedButtonState extends State<AnimatedButton> {
         },
         child: Text(
           "Start Skin Analysis",
-          style: TextStyle(fontSize: 18, color: Colors.white),
+          style: TextStyle(
+            fontSize: 20,
+            color: Colors.purple,
+          ),
         ),
       ),
     );

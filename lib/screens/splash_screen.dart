@@ -7,7 +7,8 @@ class SplashScreen extends StatefulWidget {
   _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMixin {
+class _SplashScreenState extends State<SplashScreen>
+    with TickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation<double> _scaleAnimation;
 
@@ -15,14 +16,14 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
   void initState() {
     super.initState();
     _animationController = AnimationController(
-      duration: Duration(seconds: 3),
+      duration: Duration(seconds: 4),
       vsync: this,
     )..forward();
 
     _scaleAnimation = Tween<double>(begin: 0.5, end: 1.0).animate(
         CurvedAnimation(parent: _animationController, curve: Curves.easeOut));
 
-    Timer(Duration(seconds: 3), () {
+    Timer(Duration(seconds: 4), () {
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => HomeScreen()));
     });
@@ -31,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueAccent,
+      backgroundColor: const Color.fromARGB(255, 142, 184, 255),
       body: Center(
         child: ScaleTransition(
           scale: _scaleAnimation,
@@ -39,15 +40,20 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
             opacity: 1.0,
             duration: Duration(seconds: 2),
             child: Container(
+              width: 300,
+              height: 150,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [Colors.purple, Colors.blueAccent],
+                  colors: [
+                    Colors.purple,
+                    const Color.fromARGB(255, 142, 184, 255),
+                  ],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
                 borderRadius: BorderRadius.circular(15),
               ),
-              padding: EdgeInsets.symmetric(vertical: 40, horizontal: 60),
+              padding: EdgeInsets.symmetric(vertical: 30, horizontal: 60),
               child: Text(
                 "Skin Health Analyzer",
                 style: TextStyle(
